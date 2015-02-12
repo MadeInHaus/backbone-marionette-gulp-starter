@@ -2,16 +2,16 @@
         $ = require('jquery'),
         Backbone = require('backbone'),
         Marionette = require('backbone.marionette'),
-        constants = require('../utils/constants'),
+        constants = require('utils/constants'),
         channels = require('../channels'),
 
         // Views
-        GlobalView = require('../views/GlobalView.js'),
-        BaseView = require('../views/BaseView.js');
+        GlobalView = require('views/GlobalView.js'),
+        BaseView = require('views/BaseView.js');
 
     module.exports = Backbone.Marionette.Controller.extend({
 
-        initialize: function() {
+        initialize: function () {
 
             // State checks
             app.onload = true;
@@ -21,12 +21,12 @@
 
         },
 
-        bootstrap: function() {
+        bootstrap: function () {
             this.globalView = new GlobalView();
             this.baseView = new BaseView();
         },
 
-        navigate: function(options) {
+        navigate: function (options) {
 
             // If navigate() is being called...
             // we must be past our initial page load
@@ -46,15 +46,18 @@
         /* View Routes
         =========================================== */
 
-        index: function() {
+        index: function () {
+            alert('hey!');
             console.log('AppController > index()');
         },
 
-        home: function() {
+        home: function () {
+            alert('hey!');
             console.log('AppController > home()');
         },
 
-        default: function(route) {
+        default: function (route) {
+            alert('error');
             console.log('%cRoute /%s does not exist', 'color:white; background:gray; padding: 0 0.25em', route);
         }
 

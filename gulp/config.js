@@ -35,6 +35,7 @@ module.exports = {
     browserify: {
         // A separate bundle will be generated for each
         // bundle config in the list below
+        src: src,
         bundleConfigs: [{
             entries: src + '/javascript/main.js',
             dest: dest + '/js',

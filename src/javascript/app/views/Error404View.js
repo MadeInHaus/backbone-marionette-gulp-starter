@@ -1,5 +1,5 @@
 var Marionette = require('backbone.marionette'),
-    template = require('../../templates/error404.hbs');
+    template = require('templates/error404.hbs');
 
 module.exports = Marionette.ItemView.extend({
 

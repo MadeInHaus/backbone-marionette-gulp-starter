@@ -1,16 +1,16 @@
     var app = require('../app'),
-        $ = require('jquery'),
+var app = require('app/app'),
         channels = require('../channels'),
-        constants = require('../utils/constants'),
-        Marionette = require('backbone.marionette');
+    $ = require('jquery'),
+    constants = require('utils/constants'),
+    Marionette = require('backbone.marionette');
 
-    module.exports = app.Behaviors['Test'] = Marionette.Behavior.extend({
+module.exports = app.Behaviors['Test'] = Marionette.Behavior.extend({
 
-        ui: {
-        },
+    ui: {},
 
-        initialize: function() {
-            console.log('View using Test Behavior');
-        }
+    initialize: function () {
+        console.log('View using Test Behavior');
+    }
 
-    });
+});
