@@ -47,17 +47,14 @@
         =========================================== */
 
         index: function () {
-            alert('hey!');
             console.log('AppController > index()');
         },
 
         home: function () {
-            alert('hey!');
             console.log('AppController > home()');
         },
 
-        default: function (route) {
-            alert('error');
+        defaultHandler: function (route) {
             console.log('%cRoute /%s does not exist', 'color:white; background:gray; padding: 0 0.25em', route);
         }
 

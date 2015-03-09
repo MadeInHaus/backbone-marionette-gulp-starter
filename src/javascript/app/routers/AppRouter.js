@@ -6,7 +6,7 @@ module.exports = Marionette.AppRouter.extend({
 
     appRoutes: {
         '(/)': 'index',
-        '*default': 'default'
+        '*default': 'defaultHandler'
     },
 
     controller: new AppController()
