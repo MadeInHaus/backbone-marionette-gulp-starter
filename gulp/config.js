@@ -28,9 +28,9 @@ module.exports = {
         src: src + "/images/**",
         dest: dest + "/images"
     },
-    fonts: {
-        src: src + '/fonts/*',
-        dest: dest + '/fonts'
+    staticAssets: {
+        src: src + '/static-assets/*',
+        dest: dest + '/static-assets'
     },
     markup: {
         src: src + "/html/**/*.html",
