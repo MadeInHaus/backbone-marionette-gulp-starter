@@ -30,7 +30,7 @@ module.exports = {
     },
     staticAssets: {
         src: src + '/static-assets/*',
-        dest: dest + '/static-assets'
+        dest: dest
     },
     markup: {
         src: src + "/html/**/*.html",
