@@ -56,16 +56,12 @@
             }
 
             function handleVisibilityChange() {
-
-                if (document.hidden) {
-                    console.log('document is hidden');
-                } else {
-                    console.log('document is showing');
-                }
-
+                // channels.globalChannel.trigger('app:visibility', !document[hidden]);
             }
 
-            document.addEventListener('visibilitychange', handleVisibilityChange, false);
+            if (visibilityChange && typeof document.addEventListener !== 'undefined') {
+                document.addEventListener(visibilityChange, handleVisibilityChange, false);
+            }
 
         }
 
