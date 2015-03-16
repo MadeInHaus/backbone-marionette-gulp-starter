@@ -1,5 +1,6 @@
-var $ = require('jquery');
+var $ = global.$ = global.jQuery = require('jquery');
 var Backbone = require('backbone');
+var _ = global._ = require('underscore');
 Backbone.$ = $;
 var Marionette = require('backbone.marionette');
 

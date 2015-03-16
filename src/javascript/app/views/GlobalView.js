@@ -1,68 +1,66 @@
-    var $ = require('jquery'),
-        _ = require('underscore'),
-        Marionette = require('backbone.marionette'),
-        helpers = require('../utils/helpers'),
-        channels = require('../channels'),
-        constants = require('../utils/constants'),
-        attachFastClick = require('fastclick');
+var Marionette = require('backbone.marionette'),
+    helpers = require('utils/helpers'),
+    channels = require('channels'),
+    constants = require('utils/constants'),
+    attachFastClick = require('fastclick');
 
-    // View Behaviors
-    require('../behaviors/Navigator');
+// View Behaviors
+require('../behaviors/Navigator');
 
-    module.exports = Marionette.ItemView.extend({
+module.exports = Marionette.ItemView.extend({
 
-        el: 'body',
+    el: 'body',
 
-        events: {
-            'keyup': 'keyup'
-        },
+    events: {
+        'keyup': 'keyup'
+    },
 
-        behaviors: {
-            Navigator: {}
-        },
+    behaviors: {
+        Navigator: {}
+    },
 
-        initialize: function() {
+    initialize: function() {
 
-            // Javascript is ready... go!
-            this.$el.removeClass(constants.INITING_CLASS);
+        // Javascript is ready... go!
+        this.$el.removeClass(constants.INITING_CLASS);
 
-            // No click delay for iOS
-            attachFastClick(document.body);
+        // No click delay for iOS
+        attachFastClick(document.body);
 
-            // Force touch devices to respect :active styles in CSS
-            document.addEventListener('touchstart', function() {}, true);
+        // Force touch devices to respect :active styles in CSS
+        document.addEventListener('touchstart', function() {}, true);
 
-            // Page visibility detection
-            this.listenForPageVisibility();
+        // Page visibility detection
+        this.listenForPageVisibility();
 
-        },
+    },
 
-        listenForPageVisibility: function() {
+    listenForPageVisibility: function() {
 
-            var hidden, visibilityChange;
+        var hidden, visibilityChange;
 
-            if (typeof document.hidden !== 'undefined') {
-                hidden = 'hidden';
-                visibilityChange = 'visibilitychange';
-            } else if (typeof document.mozHidden !== 'undefined') {
-                hidden = 'mozHidden';
-                visibilityChange = 'mozvisibilitychange';
-            } else if (typeof document.msHidden !== 'undefined') {
-                hidden = 'msHidden';
-                visibilityChange = 'msvisibilitychange';
-            } else if (typeof document.webkitHidden !== 'undefined') {
-                hidden = 'webkitHidden';
-                visibilityChange = 'webkitvisibilitychange';
-            }
-
-            function handleVisibilityChange() {
-                // channels.globalChannel.trigger('app:visibility', !document[hidden]);
-            }
-
-            if (visibilityChange && typeof document.addEventListener !== 'undefined') {
-                document.addEventListener(visibilityChange, handleVisibilityChange, false);
-            }
-
+        if (typeof document.hidden !== 'undefined') {
+            hidden = 'hidden';
+            visibilityChange = 'visibilitychange';
+        } else if (typeof document.mozHidden !== 'undefined') {
+            hidden = 'mozHidden';
+            visibilityChange = 'mozvisibilitychange';
+        } else if (typeof document.msHidden !== 'undefined') {
+            hidden = 'msHidden';
+            visibilityChange = 'msvisibilitychange';
+        } else if (typeof document.webkitHidden !== 'undefined') {
+            hidden = 'webkitHidden';
+            visibilityChange = 'webkitvisibilitychange';
         }
 
-    });
+        function handleVisibilityChange() {
+            // channels.globalChannel.trigger('app:visibility', !document[hidden]);
+        }
+
+        if (visibilityChange && typeof document.addEventListener !== 'undefined') {
+            document.addEventListener(visibilityChange, handleVisibilityChange, false);
+        }
+
+    }
+
+});

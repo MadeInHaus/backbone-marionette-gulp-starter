@@ -1,10 +1,12 @@
-{
-    "item1": {
-        "width": 960,
-        "height": 540
-    },
-    "item2": {
-        "width": 480,
-        "height": 270
+[
+    {
+        "item1": {
+            "width": 960,
+            "height": 540
+        },
+        "item2": {
+            "width": 480,
+            "height": 270
+        }
     }
-}
+]

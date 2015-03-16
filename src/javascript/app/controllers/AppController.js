@@ -1,5 +1,4 @@
     var app = require('../app'),
-        $ = require('jquery'),
         Backbone = require('backbone'),
         Marionette = require('backbone.marionette'),
         constants = require('utils/constants'),

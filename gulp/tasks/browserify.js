@@ -29,6 +29,7 @@ var aliasify = require('aliasify').configure({
         "utils": "./app/utils",
         "views": "./app/views",
         "libs": "./libs",
+        "channels":"./app/channels",
         "templates": "./templates",
     },
     configDir: config.src + '/javascript'

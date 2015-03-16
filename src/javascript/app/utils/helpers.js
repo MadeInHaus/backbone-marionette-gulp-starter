@@ -1,5 +1,4 @@
-var $ = require('jquery'),
-    $window = $(window),
+var $window = $(window),
     $body = $('body'),
     $main = $('.main-content'),
     loader = $('.radial-progress'),
