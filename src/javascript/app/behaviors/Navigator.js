@@ -21,8 +21,8 @@ module.exports = app.Behaviors['Navigator'] = Marionette.Behavior.extend({
 
     onNavigate: function(url) {
         channels.globalChannel.trigger('navigate', {
-            route: url,
-            triggerStatus: true
+            url: url,
+            trigger: true
         });
     }
 

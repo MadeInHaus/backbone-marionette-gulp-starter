@@ -10,7 +10,7 @@
 
     module.exports = Backbone.Marionette.Controller.extend({
 
-        initialize: function () {
+        initialize: function() {
 
             // State checks
             app.onload = true;
@@ -20,24 +20,23 @@
 
         },
 
-        bootstrap: function () {
+        bootstrap: function() {
             this.globalView = new GlobalView();
             this.baseView = new BaseView();
         },
 
-        navigate: function (options) {
+        navigate: function(options) {
 
             // If navigate() is being called...
             // we must be past our initial page load
             // so we'll set onload to 'false'
             app.onload = false;
 
-            this.url = options.route;
-            this.triggerStatus = options.triggerStatus;
+            var url = options.url;
+            var trigger = options.trigger ? options.trigger : false;
 
-            // Navigate, good sir!
-            app.appRouter.navigate(this.url, {
-                trigger: this.triggerStatus
+            app.appRouter.navigate(url, {
+                trigger: trigger
             });
 
         },
@@ -45,15 +44,15 @@
         /* View Routes
         =========================================== */
 
-        index: function () {
+        index: function() {
             console.log('AppController > index()');
         },
 
-        home: function () {
+        home: function() {
             console.log('AppController > home()');
         },
 
-        defaultHandler: function (route) {
+        defaultHandler: function(route) {
             console.log('%cRoute /%s does not exist', 'color:white; background:gray; padding: 0 0.25em', route);
         }
 
