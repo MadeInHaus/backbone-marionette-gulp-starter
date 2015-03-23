@@ -39,7 +39,7 @@ gulp.task('s3', ['production'], function() {
 
     var params = {
         localDir: config.dest,
-        deleteRemoved: true,
+        deleteRemoved: false, // Do not remove files on S3 if they are not present on local FS
         s3Params: {
             Bucket: s3Bucket,
             ACL: 'public-read'
