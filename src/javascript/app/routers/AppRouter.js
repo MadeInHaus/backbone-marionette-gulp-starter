@@ -1,6 +1,5 @@
-var Marionette = require('backbone.marionette'),
-    AppController = require('controllers/AppController.js'),
-    channels = require('../channels.js');
+var Marionette = require('backbone.marionette');
+var AppController = require('controllers/AppController.js');
 
 module.exports = Marionette.AppRouter.extend({
 

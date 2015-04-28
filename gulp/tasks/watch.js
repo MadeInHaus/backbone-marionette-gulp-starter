@@ -12,7 +12,7 @@ var sassTask = require('./sass');
 var imagesTask = require('./images');
 var markupTask = require('./markup');
 
-gulp.task('watch', ['watchify', 'browserSync'], function (callback) {
+gulp.task('watch', ['watchify', 'browserSync'], function () {
     watch(config.sass.src, {
         name: 'watch-sass',
         read: false

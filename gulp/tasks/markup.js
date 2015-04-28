@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var config = require('../config').markup
+var config = require('../config').markup;
 var browserSync = require('browser-sync');
 
 var taskDef = function () {

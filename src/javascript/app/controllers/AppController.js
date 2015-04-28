@@ -1,59 +1,56 @@
-    var app = require('../app'),
-        Backbone = require('backbone'),
-        Marionette = require('backbone.marionette'),
-        constants = require('utils/constants'),
-        channels = require('../channels'),
+var app = require('../app');
+var Backbone = require('backbone');
 
-        // Views
-        GlobalView = require('views/GlobalView.js'),
-        BaseView = require('views/BaseView.js');
+// Views
+var GlobalView = require('views/GlobalView');
+var BaseView = require('views/BaseView');
 
-    module.exports = Backbone.Marionette.Controller.extend({
+module.exports = Backbone.Marionette.Controller.extend({
 
-        initialize: function() {
+    initialize: function() {
 
-            // State checks
-            app.onload = true;
+        // State checks
+        app.onload = true;
 
-            // Bootstrap it, gurrl
-            this.bootstrap();
+        // Bootstrap it, gurrl
+        this.bootstrap();
 
-        },
+    },
 
-        bootstrap: function() {
-            this.globalView = new GlobalView();
-            this.baseView = new BaseView();
-        },
+    bootstrap: function() {
+        this.globalView = new GlobalView();
+        this.baseView = new BaseView();
+    },
 
-        navigate: function(options) {
+    navigate: function(options) {
 
-            // If navigate() is being called...
-            // we must be past our initial page load
-            // so we'll set onload to 'false'
-            app.onload = false;
+        // If navigate() is being called...
+        // we must be past our initial page load
+        // so we'll set onload to 'false'
+        app.onload = false;
 
-            var url = options.url;
-            var trigger = options.trigger ? options.trigger : false;
+        var url = options.url;
+        var trigger = options.trigger ? options.trigger : false;
 
-            app.appRouter.navigate(url, {
-                trigger: trigger
-            });
+        app.appRouter.navigate(url, {
+            trigger: trigger
+        });
 
-        },
+    },
 
-        /* View Routes
-        =========================================== */
+    /* View Routes
+    =========================================== */
 
-        index: function() {
-            console.log('AppController > index()');
-        },
+    index: function() {
+        console.log('AppController > index()');
+    },
 
-        home: function() {
-            console.log('AppController > home()');
-        },
+    home: function() {
+        console.log('AppController > home()');
+    },
 
-        defaultHandler: function(route) {
-            console.log('%cRoute /%s does not exist', 'color:white; background:gray; padding: 0 0.25em', route);
-        }
+    defaultHandler: function(route) {
+        console.log('%cRoute /%s does not exist', 'color:white; background:gray; padding: 0 0.25em', route);
+    }
 
-    });
+});

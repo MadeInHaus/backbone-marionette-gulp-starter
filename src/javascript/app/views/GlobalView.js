@@ -1,6 +1,4 @@
 var Marionette = require('backbone.marionette'),
-    helpers = require('utils/helpers'),
-    channels = require('channels'),
     constants = require('utils/constants'),
     attachFastClick = require('fastclick');
 

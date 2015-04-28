@@ -1,4 +1,4 @@
-var dest = "./build";
+var dest = './build';
 var src = './src';
 var modRewrite = require('connect-modrewrite');
 
@@ -15,8 +15,8 @@ module.exports = {
         }
     },
     sass: {
-        src: src + "/sass/**/*.{sass,scss}",
-        dest: dest + "/css",
+        src: src + '/sass/**/*.{sass,scss}',
+        dest: dest + '/css',
         settings: {
             // Required if you want to use SASS syntax
             // See https://github.com/dlmanning/gulp-sass/issues/81
@@ -25,15 +25,15 @@ module.exports = {
         }
     },
     images: {
-        src: src + "/images/**",
-        dest: dest + "/images"
+        src: src + '/images/**',
+        dest: dest + '/images'
     },
     staticAssets: {
         src: src + '/static-assets/*',
         dest: dest
     },
     markup: {
-        src: src + "/html/**/*.html",
+        src: src + '/html/**/*.html',
         dest: dest
     },
     browserify: {
