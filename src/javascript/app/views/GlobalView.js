@@ -1,6 +1,6 @@
-var Marionette = require('backbone.marionette'),
-    constants = require('utils/constants'),
-    attachFastClick = require('fastclick');
+var Marionette = require('backbone.marionette');
+var constants = require('utils/constants');
+var attachFastClick = require('fastclick');
 
 // View Behaviors
 require('../behaviors/Navigator');
