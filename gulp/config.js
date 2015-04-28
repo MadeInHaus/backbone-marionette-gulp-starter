@@ -29,7 +29,7 @@ module.exports = {
         dest: dest + '/images'
     },
     staticAssets: {
-        src: src + '/static-assets/*',
+        src: src + '/static-assets/**',
         dest: dest
     },
     markup: {
