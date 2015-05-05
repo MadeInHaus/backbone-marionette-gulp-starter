@@ -1,5 +1,6 @@
 var app = require('../app');
 var Backbone = require('backbone');
+var channels = require('../channels');
 
 // Views
 var GlobalView = require('views/GlobalView');
@@ -20,6 +21,9 @@ module.exports = Backbone.Marionette.Controller.extend({
     bootstrap: function() {
         this.globalView = new GlobalView();
         this.baseView = new BaseView();
+
+        channels.globalChannel.on('navigate', this.navigate, this);
+
     },
 
     navigate: function(options) {
