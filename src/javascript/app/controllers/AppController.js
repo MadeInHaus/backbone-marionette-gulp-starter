@@ -5,6 +5,7 @@ var channels = require('../channels');
 // Views
 var GlobalView = require('views/GlobalView');
 var BaseView = require('views/BaseView');
+var IndexView = require('views/IndexView');
 
 module.exports = Backbone.Marionette.Controller.extend({
 
@@ -46,11 +47,8 @@ module.exports = Backbone.Marionette.Controller.extend({
     =========================================== */
 
     index: function() {
-        console.log('AppController > index()');
-    },
-
-    home: function() {
-        console.log('AppController > home()');
+        var indexView = new IndexView();
+        app.regionMain.show(indexView);
     },
 
     defaultHandler: function(route) {
