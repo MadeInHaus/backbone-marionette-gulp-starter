@@ -20,17 +20,19 @@ var _ = require('lodash');
 
 var aliasify = require('aliasify').configure({
     aliases: {
+        'app': './app',
+        'app/app': './app/app',
         'behaviors': './app/behaviors',
+        'channels': './app/channels',
         'collections': './app/collections',
         'controllers': './app/controllers',
+        'libs': './libs',
         'models': './app/models',
         'regions': './app/regions',
         'routers': './app/routers',
+        'templates': './templates',
         'utils': './app/utils',
         'views': './app/views',
-        'libs': './libs',
-        'channels':'./app/channels',
-        'templates': './templates',
     },
     configDir: config.src + '/javascript'
 });
