@@ -1,6 +1,6 @@
-var app = require('../app');
+var app = require('app/app');
 var Backbone = require('backbone');
-var channels = require('../channels');
+var channels = require('channels');
 
 // Views
 var GlobalView = require('views/GlobalView');
@@ -9,7 +9,7 @@ var IndexView = require('views/IndexView');
 
 module.exports = Backbone.Marionette.Controller.extend({
 
-    initialize: function() {
+    initialize: function () {
 
         // State checks
         app.onload = true;
@@ -19,7 +19,7 @@ module.exports = Backbone.Marionette.Controller.extend({
 
     },
 
-    bootstrap: function() {
+    bootstrap: function () {
         this.globalView = new GlobalView();
         this.baseView = new BaseView();
 
@@ -27,7 +27,7 @@ module.exports = Backbone.Marionette.Controller.extend({
 
     },
 
-    navigate: function(options) {
+    navigate: function (options) {
 
         // If navigate() is being called...
         // we must be past our initial page load
@@ -46,12 +46,12 @@ module.exports = Backbone.Marionette.Controller.extend({
     /* View Routes
     =========================================== */
 
-    index: function() {
+    index: function () {
         var indexView = new IndexView();
         app.regionMain.show(indexView);
     },
 
-    defaultHandler: function(route) {
+    defaultHandler: function (route) {
         console.log('%cRoute /%s does not exist', 'color:white; background:gray; padding: 0 0.25em', route);
     }
 

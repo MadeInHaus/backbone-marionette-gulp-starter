@@ -1,5 +1,5 @@
 var BaseView = require('./BaseView');
-var template = require('../../templates/index.hbs');
+var template = require('templates/index.hbs');
 
 module.exports = BaseView.extend({
 
@@ -11,16 +11,16 @@ module.exports = BaseView.extend({
 
     events: {},
 
-    initialize: function() {},
+    initialize: function () {},
 
-    onBeforeRender: function() {},
+    onBeforeRender: function () {},
 
-    onRender: function() {},
+    onRender: function () {},
 
-    onShow: function() {},
+    onShow: function () {},
 
-    onBeforeDestroy: function() {},
+    onBeforeDestroy: function () {},
 
-    onDestroy: function() {},
+    onDestroy: function () {},
 
 });
