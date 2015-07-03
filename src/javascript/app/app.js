@@ -25,5 +25,4 @@ app.addInitializer(function() {
 
 });
 
-window.app = app;
 module.exports = app;

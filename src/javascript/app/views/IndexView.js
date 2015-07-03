@@ -11,16 +11,18 @@ module.exports = BaseView.extend({
 
     events: {},
 
-    initialize: function () {},
+    initialize: function() {},
 
-    onBeforeRender: function () {},
+    onBeforeRender: function() {},
 
-    onRender: function () {},
+    onRender: function() {},
 
-    onShow: function () {},
+    onBeforeShow: function() {},
 
-    onBeforeDestroy: function () {},
+    onShow: function() {},
 
-    onDestroy: function () {},
+    onBeforeDestroy: function() {},
+
+    onDestroy: function() {}
 
 });
