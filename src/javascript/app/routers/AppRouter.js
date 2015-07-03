@@ -1,5 +1,5 @@
 var Marionette = require('backbone.marionette');
-var AppController = require('controllers/AppController.js');
+var AppController = require('controllers/AppController');
 
 module.exports = Marionette.AppRouter.extend({
 
