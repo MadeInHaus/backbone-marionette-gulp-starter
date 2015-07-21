@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "aliasify": "^1.7.2",
-    "browser-sync": "^2.7.13",
+    "browser-sync": "^2.8.0",
     "browserify": "^10.2.4",
     "browserify-shim": "^3.8.9",
     "connect-modrewrite": "^0.8.1",
@@ -30,11 +30,11 @@
     "gulp-imagemin": "^2.3.0",
     "gulp-minify-css": "^1.2.0",
     "gulp-notify": "^2.2.0",
-    "gulp-sass": "^2.0.3",
+    "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.6",
-    "gulp-watch": "^4.2.4",
+    "gulp-watch": "^4.3.3",
     "handlebars": "^3.0.3",
     "hbsfy": "^2.2.1",
     "minimist": "^1.1.1",
@@ -43,7 +43,7 @@
     "require-dir": "^0.3.0",
     "s3": "^4.4.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.3"
+    "watchify": "^3.3.0"
   },
   "dependencies": {
     "backbone": "1.2.1",
