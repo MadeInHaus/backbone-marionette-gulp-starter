@@ -30,7 +30,7 @@ $ gulp production
 
 #### 4. Deployment
 
-Download [settings.json](https://drive.google.com/a/madeinhaus.com/file/d/0Bw4BkT47uodTdENEU0VibnkyaUk/view?usp=sharing) and place in root directory.
+Download [settings.json](link to settings.json file goes here) and place in root directory.
 
 The following command will deploy to [AWS S3](http://aws.amazon.com/s3/):
 ```js
