@@ -2,6 +2,17 @@ var dest = './build';
 var src = './src';
 var modRewrite = require('connect-modrewrite');
 
+var settings_json;
+
+try {
+    settings_json = require('../settings');
+} catch (e) {
+    console.log('settings.json file not found, some tasks may not work without this.');
+    console.log(e);
+}
+
+var settings = require('./util/settingsParser')(settings_json || {}, {dest: dest});
+
 module.exports = {
     browserSync: {
         server: {
@@ -55,8 +66,5 @@ module.exports = {
         jsSrc: dest + '/js/*.js',
         dest: dest
     },
-    settings: {
-        src: './settings.json',
-        dest: dest
-    }
+    settings: settings
 };

@@ -30,6 +30,8 @@ $ gulp production
 
 #### 4. Deployment
 
+Download [settings.json](https://drive.google.com/a/madeinhaus.com/file/d/0Bw4BkT47uodTdENEU0VibnkyaUk/view?usp=sharing) and place in root directory.
+
 The following command will deploy to [AWS S3](http://aws.amazon.com/s3/):
 ```js
 $ gulp deploy --[env]
@@ -40,6 +42,7 @@ This boilerplate assumes you've created a `settings.json` file in the project ro
 ##### Environment options
 
 - `--dev` or `--development`
+- `--qa`
 - `--stage` or `--staging`
 - `--prod` or `--production`
 
@@ -49,22 +52,21 @@ One of these arguments is required to successfully deploy files to S3, i.e `gulp
 
 ```
 {
-    "slack": {
-        "domain": "haus",
-        "token": "YOUR_SLACK_TOKEN",
-        "username": "Arnold Scavonegger",
-        "message": "New build up on: ",
-        "channel": "#dev-internal"
-    },
-    "aws": {
-        "accessKeyId": "YOUR_AWS_KEY",
-        "secretAccessKey": "YOUR_AWS_SECRET_KEY",
-        "region": "us-east-1",
-        "bucket": {
-            "dev": "YOUR_DEV_BUCKET",
-            "staging": "YOUR_STAGING_BUCKET",
-            "prod": "YOUR_PROD_BUCKET"
+    "default": {
+        "aws": {
+            "accessKeyId": "xxx",
+            "secretAccessKey": "xxx",
+            "basePath": "xxx",
+            "bucket": "madeinhaus"
+        },
+        "slack": {
+            "hook_url": "https://hooks.slack.com/services/xxx/xxx/xxx",
+            "username": "Arnold Scavonegger",
+            "message": "New build up on: "
         }
     }
 }
 ```
+
+Individual envs can have their own settings by adding a corresponding `'env': {...}` to the settings file,  only those settings which are different from default need to be set.
+

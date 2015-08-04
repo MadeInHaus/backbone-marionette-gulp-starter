@@ -1,32 +1,42 @@
+"use strict";
+
 var gulp = require('gulp');
-var config = require('../config').settings;
+var settings = require('../config').settings;
 var fs = require('fs');
 var s3 = require('s3');
+var _ = require('lodash');
 var Slack = require('node-slack');
 
 var flags = require('minimist')(process.argv.slice(2));
 var isProd = flags.production || flags.prod || false;
+var isQA = flags.qa || false;
 var isStaging = flags.staging || flags.stage || false;
 var isDev = flags.development || flags.dev || false;
+
+var env = _.find([isDev && 'development', isQA && 'qa', isStaging && 'staging', isProd && 'production']);
+settings = settings[env];
+console.log('Using these settings:\nenv: ', env, '\n\nsettings: ', settings);
 
 gulp.task('s3', ['production'], function() {
 
     // Keep sensitive credentials outside the repo
-    var settings = JSON.parse(fs.readFileSync(config.src));
     var s = settings.slack;
     var aws = settings.aws;
-    var s3Bucket;
+    var folder;
 
     if (isProd) {
-        s3Bucket = aws.bucket.prod;
+        folder = 'production';
+    } else if (isQA) {
+        folder = 'qa';
     } else if (isStaging) {
-        s3Bucket = aws.bucket.staging;
+        folder = 'staging';
     } else if (isDev) {
-        s3Bucket = aws.bucket.dev;
+        folder = 'dev';
     } else {
         console.error('\nError! Please specify an `--[environment]` when running the "deploy" task\n');
         return;
     }
+
 
     var client = s3.createClient({
         maxAsyncS3: 20, // this is the default
@@ -38,10 +48,11 @@ gulp.task('s3', ['production'], function() {
     });
 
     var params = {
-        localDir: config.dest,
+        localDir: settings.dest,
         deleteRemoved: false, // Do not remove files on S3 if they are not present on local FS
         s3Params: {
-            Bucket: s3Bucket,
+            Bucket: aws.bucket,
+            Prefix: aws.basePath + '/' + folder + '/',
             ACL: 'public-read'
         }
     };
@@ -61,14 +72,11 @@ gulp.task('s3', ['production'], function() {
 
     uploader.on('end', function() {
         console.log('done uploading');
-        var slack = new Slack(s.domain, s.token);
+        var slack = new Slack(s.hook_url, {});
 
         slack.send({
-            text: s.message + 'http://' + s3Bucket + '.s3-website-' + aws.region + '.amazonaws.com',
-            channel: s.channel,
-            username: s.username
+             text: s.message + 'http://' + aws.basePath + '.' + folder + '.haus.la',
+             username: s.username
         });
-
     });
-
 });
