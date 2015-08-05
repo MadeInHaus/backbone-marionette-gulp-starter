@@ -7,6 +7,8 @@ var s3 = require('s3');
 var _ = require('lodash');
 var Slack = require('node-slack');
 
+var gitUserInfo = require('../util/gitUserInfo');
+
 var flags = require('minimist')(process.argv.slice(2));
 var isProd = flags.production || flags.prod || false;
 var isQA = flags.qa || false;
@@ -74,9 +76,11 @@ gulp.task('s3', ['production'], function() {
         console.log('done uploading');
         var slack = new Slack(s.hook_url, {});
 
-        slack.send({
-             text: s.message + 'http://' + aws.basePath + '.' + folder + '.haus.la',
-             username: s.username
+        gitUserInfo(function (user) {
+            slack.send({
+                 text: s.message + folder + ' <http://' + aws.basePath + '.' + folder + '.haus.la>',
+                 username: user.name || user.email || "Anonymous"
+            });
         });
     });
 });
