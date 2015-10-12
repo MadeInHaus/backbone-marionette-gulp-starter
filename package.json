@@ -19,11 +19,11 @@
   "devDependencies": {
     "aliasify": "^1.7.2",
     "browser-sync": "^2.8.0",
-    "browserify": "^10.2.4",
+    "browserify": "^11.2.0",
     "browserify-shim": "^3.8.9",
     "connect-modrewrite": "^0.8.1",
     "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.3.1",
+    "gulp-autoprefixer": "^3.0.2",
     "gulp-changed": "^1.2.1",
     "gulp-filesize": "^0.0.6",
     "gulp-htmlmin": "^1.1.3",
@@ -35,7 +35,7 @@
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.6",
     "gulp-watch": "^4.3.3",
-    "handlebars": "^3.0.3",
+    "handlebars": "^4.0.3",
     "hbsfy": "^2.2.1",
     "minimist": "^1.1.1",
     "node-slack": "0.0.7",
@@ -46,7 +46,7 @@
     "watchify": "^3.3.0"
   },
   "dependencies": {
-    "backbone": "1.2.1",
+    "backbone": "1.2.3",
     "backbone.marionette": "^2.4.2",
     "backbone.radio": "^1.0.0",
     "fastclick": "^1.0.6",
