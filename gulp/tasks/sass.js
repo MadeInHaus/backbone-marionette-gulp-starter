@@ -16,9 +16,7 @@ var taskDef = function () {
             browsers: ['last 2 versions']
         }))
         .pipe(gulp.dest(config.dest))
-        .pipe(browserSync.reload({
-            stream: true
-        }));
+        .pipe(browserSync.stream());
 };
 
 module.exports = taskDef;
