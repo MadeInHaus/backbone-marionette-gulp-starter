@@ -2,4 +2,39 @@
 // Layouts
 // ---------------------------
 
-.app {}
+.app {
+    width: 90%;
+    max-width: 70em;
+    margin: 5em auto;
+    font-size: 1em;
+}
+
+@media (min-width: 480px) {
+    .app {
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 600px) {
+    .app {
+         font-size: 1.2em;
+    }
+}
+
+@media (min-width: 768px) {
+    .app {
+         font-size: 1.3em;
+    }
+}
+
+@media (min-width: 992px) {
+    .app {
+         font-size: 1.4em;
+    }
+}
+
+@media (min-width: 1382px) {
+    .app {
+         font-size: 1.5em;
+    }
+}
