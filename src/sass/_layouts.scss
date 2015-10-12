@@ -9,32 +9,32 @@
     font-size: 1em;
 }
 
-@media (min-width: 480px) {
+@include mobile {
     .app {
         font-size: 1.1em;
     }
 }
 
-@media (min-width: 600px) {
+@include largeMobile {
     .app {
-         font-size: 1.2em;
+        font-size: 1.2em;
     }
 }
 
-@media (min-width: 768px) {
+@include tablet {
     .app {
-         font-size: 1.3em;
+        font-size: 1.3em;
     }
 }
 
-@media (min-width: 992px) {
+@include desktop {
     .app {
-         font-size: 1.4em;
+        font-size: 1.4em;
     }
 }
 
-@media (min-width: 1382px) {
+@include largeDesktop {
     .app {
-         font-size: 1.5em;
+        font-size: 1.5em;
     }
 }

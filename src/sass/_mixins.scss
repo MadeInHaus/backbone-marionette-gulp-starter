@@ -29,7 +29,7 @@
 }
 
 // Clearfix
-@mixin clearfix() {
+@mixin clearfix {
     &:before,
     &:after {
         content: "";
@@ -62,4 +62,37 @@
     word-break: break-word;
     // <== Non standard for webkit
     @include hyphens;
+}
+
+//
+// Media Queries
+
+@mixin mobile {
+    @media (min-width: #{$mobileWidth}) {
+        @content;
+    }
+}
+
+@mixin largeMobile {
+    @media (min-width: #{$largeMobileWidth}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tabletWidth}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktopWidth}) {
+        @content;
+    }
+}
+
+@mixin largeDesktop {
+    @media (min-width: #{$largeDesktopWidth}) {
+        @content;
+    }
 }
