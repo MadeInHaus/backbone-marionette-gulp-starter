@@ -1,6 +1,5 @@
 var dest = './build';
 var src = './src';
-var modRewrite = require('connect-modrewrite');
 
 var settings_json;
 
@@ -17,12 +16,7 @@ module.exports = {
     browserSync: {
         server: {
             // Serve up our build folder
-            baseDir: dest,
-            middleware: [
-                modRewrite([
-                    '^[^\\.]*$ /index.html [L]'
-                ])
-            ]
+            baseDir: dest
         }
     },
     browserify: {
