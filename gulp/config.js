@@ -25,28 +25,6 @@ module.exports = {
             ]
         }
     },
-    sass: {
-        src: src + '/sass/**/*.{sass,scss}',
-        dest: dest + '/css',
-        settings: {
-            // Required if you want to use SASS syntax
-            // See https://github.com/dlmanning/gulp-sass/issues/81
-            sourceComments: 'map',
-            imagePath: '/images' // Used by the image-url helper
-        }
-    },
-    images: {
-        src: src + '/images/**',
-        dest: dest + '/images'
-    },
-    staticAssets: {
-        src: src + '/static-assets/**',
-        dest: dest
-    },
-    markup: {
-        src: src + '/html/**/*.html',
-        dest: dest
-    },
     browserify: {
         // A separate bundle will be generated for each
         // bundle config in the list below
@@ -60,6 +38,28 @@ module.exports = {
             // list of modules to make require-able externally
             //require: ['some-module', 'another-module']
         }]
+    },
+    assets: {
+        src: src + '/assets/**',
+        dest: dest
+    },
+    images: {
+        src: src + '/images/**',
+        dest: dest + '/images'
+    },
+    markup: {
+        src: src + '/html/**/*.html',
+        dest: dest
+    },
+    sass: {
+        src: src + '/sass/**/*.{sass,scss}',
+        dest: dest + '/css',
+        settings: {
+            // Required if you want to use SASS syntax
+            // See https://github.com/dlmanning/gulp-sass/issues/81
+            sourceComments: 'map',
+            imagePath: '/images' // Used by the image-url helper
+        }
     },
     production: {
         cssSrc: dest + '/css/*.css',
