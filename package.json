@@ -49,9 +49,7 @@
     "backbone.marionette": "^2.4.4",
     "backbone.radio": "^1.0.2",
     "fastclick": "^1.0.6",
-    "imagesloaded": "^4.1.0",
     "jquery": "^2.2.0",
-    "lodash": "^4.3.0",
-    "velocity-animate": "^1.2.3"
+    "lodash": "^4.3.0"
   }
 }
