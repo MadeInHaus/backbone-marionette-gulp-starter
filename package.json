@@ -1,6 +1,6 @@
 {
   "name": "backbone-marionette-gulp-starter",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Backbone-Marionette-Gulp starter with common tasks and scenarios",
   "repository": {
     "type": "git",
