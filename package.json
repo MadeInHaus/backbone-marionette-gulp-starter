@@ -6,6 +6,7 @@
     "type": "git",
     "url": "git://github.com/MadeInHaus/backbone-marionette-gulp-starter.git"
   },
+  "license": "MIT",
   "browserify": {
     "transform": ["aliasify", "hbsfy"]
   },
