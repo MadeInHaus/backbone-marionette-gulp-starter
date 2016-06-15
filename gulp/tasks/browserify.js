@@ -18,24 +18,7 @@ var source = require('vinyl-source-stream');
 var config = require('../config').browserify;
 var _ = require('lodash');
 
-var aliasify = require('aliasify').configure({
-    aliases: {
-        'app': './app',
-        'app/app': './app/app',
-        'behaviors': './app/behaviors',
-        'channels': './app/channels',
-        'collections': './app/collections',
-        'controllers': './app/controllers',
-        'libs': './libs',
-        'models': './app/models',
-        'regions': './app/regions',
-        'routers': './app/routers',
-        'templates': './templates',
-        'utils': './app/utils',
-        'views': './app/views',
-    },
-    configDir: config.src + '/javascript'
-});
+var babelify = require('babelify');
 
 var browserifyTask = function (callback, devMode) {
 
@@ -53,7 +36,9 @@ var browserifyTask = function (callback, devMode) {
             bundleConfig = _.omit(bundleConfig, ['external', 'require']);
         }
 
-        var b = browserify(bundleConfig).transform(aliasify);
+        var b = browserify(bundleConfig);
+
+        b.transform(babelify);
 
         var bundle = function () {
             // Log when bundling starts

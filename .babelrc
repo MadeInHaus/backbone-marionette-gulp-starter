@@ -1,0 +1,19 @@
+{
+    "presets": [
+        "es2015",
+        "stage-2"
+    ],
+    "plugins": [
+        ["babel-plugin-module-alias", [
+              { "src": "./src/javascript/app/app", "expose": "app/app" },
+              { "src": "./src/javascript/app/behaviors", "expose": "behaviors" },
+              { "src": "./src/javascript/app/controllers", "expose": "controllers" },
+              { "src": "./src/javascript/app/models", "expose": "models" },
+              { "src": "./src/javascript/app/routers", "expose": "routers" },
+              { "src": "./src/javascript/templates", "expose": "templates" },
+              { "src": "./src/javascript/app/utils", "expose": "utils" },
+              { "src": "./src/javascript/app/views", "expose": "views" },
+            ]
+        ]
+    ]
+}

@@ -1,10 +1,19 @@
-var Marionette = require('backbone.marionette');
-var template = require('templates/error404.hbs');
+import BaseView from './BaseView';
+import template from 'templates/error404.hbs';
 
-module.exports = Marionette.ItemView.extend({
+export default BaseView.extend({
 
-    className: 'error404',
+    className: 'page page-error404',
+    template,
 
-    template: template
+    initialize(options) {
+        this.route = options.route;
+    },
+
+    templateContext() {
+        return {
+            route: this.route,
+        };
+    },
 
 });

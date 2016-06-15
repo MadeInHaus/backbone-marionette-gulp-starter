@@ -1,28 +1,23 @@
-var app = require('app/app');
-var Marionette = require('backbone.marionette');
+import Marionette from 'backbone.marionette';
+import IndexView from 'views/IndexView';
+import AboutView from 'views/AboutView';
+import Error404View from 'views/Error404View';
 
-// Views
-var BaseView = require('views/BaseView');
-var IndexView = require('views/IndexView');
+export default Marionette.Object.extend({
 
-module.exports = Marionette.Controller.extend({
-
-    initialize: function () {
-        app.state.set('onload', true);
-        this.bootstrap();
+    index() {
+        window.app.getView().showChildView('main', new IndexView());
     },
 
-    bootstrap: function () {
-        this.baseView = new BaseView();
+    about() {
+        window.app.getView().showChildView('main', new AboutView());
     },
 
-    index: function () {
-        var indexView = new IndexView();
-        app.rootView.regionMain.show(indexView);
+    defaultHandler(route) {
+        window.app.getView().showChildView('main', new Error404View({
+            route,
+        }));
+        console.warn(`[ ${route} ] does not exist!`);
     },
-
-    defaultHandler: function (route) {
-        console.log('%cRoute /%s does not exist', 'color:white; background:gray; padding: 0 0.25em', route);
-    }
 
 });

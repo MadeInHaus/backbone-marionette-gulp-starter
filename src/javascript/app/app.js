@@ -1,55 +1,44 @@
-var $ = global.$ = global.jQuery = require('jquery');
-var _ = global._ = require('lodash');
-var Backbone = require('backbone');
+import _ from 'lodash';
+import $ from 'jquery';
+import Backbone from 'backbone';
 Backbone.$ = $;
 Backbone._ = _;
-var Marionette = require('backbone.marionette');
+import Marionette from 'backbone.marionette';
 
-var RootView = require('views/RootView');
-var State = require('models/State');
+import AppRouter from 'routers/AppRouter';
+import AppLayout from 'views/AppLayout';
+import AppController from 'controllers/AppController';
+import AppState from 'models/state';
 
-app = new Marionette.Application({
+export default Marionette.Application.extend({
 
-    initialize: function() {
-        this.state = new State();
-        this.on('navigate', this.navigate, this);
+    region: '#app',
+
+    onBeforeStart() {
+        this.appRouter = new AppRouter({
+            controller: new AppController(),
+        });
     },
 
-    onStart: function() {
+    onStart() {
 
-        var AppRouter = require('./routers/AppRouter');
-        this.appRouter = new AppRouter();
+        this.showView(new AppLayout({
+            model: new AppState(),
+        }));
 
-        this.rootView = new RootView({
-            model: this.state
+        this.on('navigate', function(options) {
+            const url = options.url;
+            const trigger = options.trigger ? options.trigger : false;
+            this.appRouter.navigate(url, {
+                trigger,
+            });
         });
 
         Backbone.history.start({
             pushState: true,
-            root: '/'
+            root: '/',
         });
 
     },
 
-    navigate: function(options) {
-
-        this.state.set('onload', false);
-
-        var url = options.url;
-        var trigger = options.trigger ? options.trigger : false;
-
-        this.appRouter.navigate(url, {
-            trigger: trigger
-        });
-
-    }
-
 });
-
-app.Behaviors = app.Behaviors || {};
-
-Marionette.Behaviors.behaviorsLookup = function() {
-    return app.Behaviors;
-};
-
-module.exports = app;

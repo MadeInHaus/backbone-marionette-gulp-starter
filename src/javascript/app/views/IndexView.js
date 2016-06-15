@@ -1,28 +1,38 @@
-var BaseView = require('./BaseView');
-var template = require('templates/index.hbs');
+import BaseView from './BaseView';
+import template from 'templates/index.hbs';
 
-module.exports = BaseView.extend({
+export default BaseView.extend({
 
     className: 'page page-index',
 
-    template: template,
+    template,
 
     ui: {},
 
     events: {},
 
-    initialize: function() {},
+    initialize() {},
 
-    onBeforeRender: function() {},
+    // Creation Lifecycle
 
-    onRender: function() {},
+    onBeforeRender() {},
 
-    onBeforeShow: function() {},
+    onRender() {},
 
-    onShow: function() {},
+    onBeforeAttach() {},
 
-    onBeforeDestroy: function() {},
+    onAttach() {},
 
-    onDestroy: function() {}
+    onDomRefresh() {},
+
+    // Destruction Lifecycle
+
+    onBeforeDestroy() {},
+
+    onBeforeDetach() {},
+
+    onDetach() {},
+
+    onDestroy() {},
 
 });

@@ -1,27 +1,29 @@
-var Marionette = require('backbone.marionette');
+import Marionette from 'backbone.marionette';
+import _ from 'lodash';
+import $ from 'jquery';
 
-module.exports = app.Behaviors.Closeable = Marionette.Behavior.extend({
+export default Marionette.Behavior.extend({
 
     events: {
-        'click .js-close': 'destroyView'
+        'click .js-close': 'destroyView',
     },
 
-    onShow: function() {
+    onRender() {
         $(window).on('keydown.closeable', _.bind(this.checkClose, this));
     },
 
-    onDestroy: function() {
+    onDestroy() {
         $(window).off('.closeable');
     },
 
-    checkClose: function(e) {
+    checkClose(e) {
         if (e.keyCode === 27) {
             this.destroyView();
         }
     },
 
-    destroyView: function() {
+    destroyView() {
         this.view.destroy();
-    }
+    },
 
 });
