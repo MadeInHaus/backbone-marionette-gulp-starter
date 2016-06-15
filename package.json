@@ -9,17 +9,10 @@
   "license": "MIT",
   "browserify": {
     "transform": [
-      "aliasify",
       "hbsfy"
     ]
   },
-  "aliasify": {
-    "aliases": {
-      "underscore": "lodash"
-    }
-  },
   "devDependencies": {
-    "aliasify": "2.0.0",
     "babel-eslint": "6.0.4",
     "babelify": "7.3.0",
     "browser-sync": "2.13.0",
@@ -43,6 +36,7 @@
     "gulp-watch": "4.3.6",
     "handlebars": "4.0.5",
     "hbsfy": "2.7.0",
+    "lodash": "4.13.1",
     "minimist": "1.2.0",
     "node-slack": "0.0.7",
     "pretty-hrtime": "1.0.2",
@@ -63,7 +57,6 @@
     "backbone.radio": "^2.0.0-pre.1",
     "fastclick": "1.0.6",
     "jquery": "3.0.0",
-    "lodash": "4.13.1",
-    "underscore": "^1.8.3"
+    "underscore": "1.8.3"
   }
 }

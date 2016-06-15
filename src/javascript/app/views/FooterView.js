@@ -3,7 +3,7 @@ import template from 'templates/footer';
 import itemViewTemplate from 'templates/random-number';
 import { getRandomInt } from 'utils/helpers';
 import $ from 'jquery';
-import _ from 'lodash';
+import _ from 'underscore';
 
 const ItemView = Marionette.View.extend({
 

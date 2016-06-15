@@ -1,5 +1,5 @@
 import Marionette from 'backbone.marionette';
-import _ from 'lodash';
+import _ from 'underscore';
 import $ from 'jquery';
 
 export default Marionette.Behavior.extend({
