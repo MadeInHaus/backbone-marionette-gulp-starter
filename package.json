@@ -34,6 +34,7 @@
     "gulp-filesize": "0.0.6",
     "gulp-htmlmin": "2.0.0",
     "gulp-imagemin": "3.0.1",
+    "gulp-modernizr": "1.0.0-alpha",
     "gulp-notify": "2.2.0",
     "gulp-sass": "2.3.1",
     "gulp-sourcemaps": "1.6.0",

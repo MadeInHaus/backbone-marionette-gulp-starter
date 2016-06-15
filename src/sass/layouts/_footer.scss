@@ -21,9 +21,7 @@ footer {
         color: $white;
         font-weight: $bold;
     }
-    .touch {
-        span {
-            display: none;
-        }
+    .touchevents & {
+        display: none;
     }
 }
