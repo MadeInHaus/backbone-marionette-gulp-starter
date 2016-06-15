@@ -1,6 +1,6 @@
 # Backbone-Marionette-Gulp Starter
 
-We don't always choose Backbone/Marionette/Gulp, but when we do, we clone this. The starting point for our frontend applications at [HAUS](http://madeinhaus.com).
+An ES6-ready boilerplate for building Backbone/Marionette apps using Gulp.
 
 ## Getting Started
 
@@ -19,12 +19,12 @@ $ npm install
 #### 3. Run gulp
 
 Start a local dev environment:
-```js
+```sh
 $ gulp
 ```
 
 Generate a production build:
-```js
+```sh
 $ gulp production
 ```
 
@@ -33,7 +33,7 @@ $ gulp production
 Download [settings.json](link to settings.json file goes here) and place in root directory.
 
 The following command will deploy to [AWS S3](http://aws.amazon.com/s3/):
-```js
+```sh
 $ gulp deploy --[env]
 ```
 
