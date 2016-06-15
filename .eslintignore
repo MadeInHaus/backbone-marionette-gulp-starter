@@ -1,2 +1,3 @@
-**/src/javascript/libs/vendor/
-**/build/
+**/build/**
+**/node_modules/**
+**/vendor/**
