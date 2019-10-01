@@ -36,7 +36,7 @@
     "gulp-watch": "4.3.6",
     "handlebars": "4.0.5",
     "hbsfy": "2.7.0",
-    "lodash": "4.13.1",
+    "lodash": "4.17.15",
     "minimist": "1.2.0",
     "node-slack": "0.0.7",
     "pretty-hrtime": "1.0.2",
