@@ -37,7 +37,7 @@
     "handlebars": "4.4.0",
     "hbsfy": "2.7.0",
     "lodash": "4.17.15",
-    "minimist": "1.2.0",
+    "minimist": "1.2.5",
     "node-slack": "0.0.7",
     "pretty-hrtime": "1.0.2",
     "require-dir": "0.3.0",
