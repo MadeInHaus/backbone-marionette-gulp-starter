@@ -56,7 +56,7 @@
     "backbone.marionette": "^3.0.0-pre.4",
     "backbone.radio": "^2.0.0-pre.1",
     "fastclick": "1.0.6",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "underscore": "1.8.3"
   }
 }
