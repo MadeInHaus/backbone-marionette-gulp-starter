@@ -34,7 +34,7 @@
     "gulp-uglify": "1.5.3",
     "gulp-util": "3.0.7",
     "gulp-watch": "4.3.6",
-    "handlebars": "4.4.0",
+    "handlebars": "4.7.6",
     "hbsfy": "2.7.0",
     "lodash": "4.17.15",
     "minimist": "1.2.5",
